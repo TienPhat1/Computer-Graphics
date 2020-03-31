@@ -64,7 +64,7 @@ void init(void)
     glOrtho(-2,2,-2,2,-1,1);
 }
 
-    void display(void)
+void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
     drawStar(2);   
