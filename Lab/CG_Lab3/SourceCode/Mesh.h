@@ -16,7 +16,7 @@ class Face
 public:
 	int		nVerts;		//number of vertex in this face
 	VertexID*	vert;	//the list of vertex and color index
-
+	Vector3		facenorm;
 	Face()
 	{
 		nVerts	= 0;
@@ -77,18 +77,22 @@ public:
 		numFaces = 0;
 	}
 	void DrawWireframe();
-	void DrawColor();
+	void DrawColor(int);
+	void Draw();
+	void CalculateFacesNorm();
 
 	//Lab2
 	void CreateTetrahedron();
 	void CreateCuboid(float	fLenght, float fHeight, float fWidth);
 	void CreateCylinder(int nSegment, float fTopHeight, float fRadius);
-	void CreateHollowCylinder(int nSegment, float fHeight, float interRadius, float exterRadius);
+	//void CreateHollowCylinder(int nSegment, float fHeight, float interRadius, float exterRadius);
 	void CreateHinhHopCoRanh(float lenght, float width , float height , float depth, float thickness);
-	void CreateHinhHopGiaoTru(int nSegment, float lenght, float height, float radius);
-
+	//void CreateHinhHopGiaoTru(int nSegment, float lenght, float height, float radius);
+	void CreateHinhHopCoGo(float lenght, float width , float height , float depth, float thickness );
+	void CreateThanhNoi(int nSegment, float lenght, float height, float interRadius, float exterRadius);
 	//lab3
 	void SetColor(int colorIdx);
+	void setupMeterial(float t1[], float t2[], float t3[] , float t4);
 };
 
 #endif

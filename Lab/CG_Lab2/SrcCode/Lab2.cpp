@@ -17,6 +17,8 @@ Mesh	cube;
 Mesh 	cylinder;
 Mesh 	hollwcylinder;
 Mesh	hinhhopcoranh;
+Mesh 	thanhnoi;
+Mesh	hinhhopcogo;
 int		nChoice = 1;
 
 void drawAxis()
@@ -58,7 +60,10 @@ void myDisplay()
 	}
 	else if(nChoice == 5)
 		hinhhopcoranh.DrawWireframe();
-	
+	else if(nChoice == 6)
+		thanhnoi.DrawWireframe();
+	else if(nChoice == 7)
+		hinhhopcogo.DrawWireframe();
 
 	glViewport(screenWidth/2, 0, screenWidth/2, screenHeight);
 
@@ -77,6 +82,10 @@ void myDisplay()
 	}
 	else if(nChoice == 5)
 		hinhhopcoranh.DrawColor();
+	else if(nChoice == 6)
+		thanhnoi.DrawColor();
+	else if(nChoice == 7)
+		hinhhopcogo.DrawColor();
 	glFlush();
     glutSwapBuffers();
 }
@@ -101,6 +110,7 @@ int main(int argc, char **argv)
 	cout << "2. Cube" << endl;
 	cout << "3. Cylinder" << endl;
 	cout << "4. Hollow Cylinder" << endl;
+	cout << "5. Hinh hop co ranh" << endl;
 	cout << "Input the choice: " << endl;
 	cin  >> nChoice;
 
@@ -113,8 +123,10 @@ int main(int argc, char **argv)
 	tetrahedron.CreateTetrahedron();
 	cube.CreateCube(2);
 	cylinder.CreateCylinder(5,2,1);
-	hollwcylinder.CreateHollowCylinder(30,6,1.5,2);
+	hollwcylinder.CreateHollowCylinder(20,6,1.5,2);
 	hinhhopcoranh.CreateHinhHopCoRanh(4,2,2,1,0.5);
+	thanhnoi.ThanhNoi(20,8,1,0.5,1);
+	hinhhopcogo.CreateHinhHopCoGo(4,2,2,1,0.5);
 	myInit();
     glutDisplayFunc(myDisplay);
 	  

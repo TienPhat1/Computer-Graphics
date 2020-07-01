@@ -70,6 +70,8 @@ public:
 	void CreateCylinder(int nSegment, float fHeight, float fRadius);
 	void CreateHollowCylinder(int nSegment, float fHeight, float interRadius, float exterRadius);
 	void CreateHinhHopCoRanh(float lenght, float width , float height , float depth, float thickness);
+	void CreateHinhHopCoGo(float lenght, float width , float height , float depth, float thickness);
+	void ThanhNoi(int, float,float,float,float);
 };
 
 #endif
